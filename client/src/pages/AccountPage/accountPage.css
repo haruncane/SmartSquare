@@ -1,0 +1,63 @@
+.accountPage {
+    background: var(--color-normal); 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-box {
+    margin-top: 5%;
+    height: 80%;
+    width: 55%;
+    border-radius: 25px;
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-title {
+    color: var(--color-dark);
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.account-line {
+    color: var(--color-semidark);
+    width: 95%;
+    border: 2px solid;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+.account-info {
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 10%;
+    row-gap: 5%;
+    margin-top: 7%;
+}
+
+.account-label {
+    color: var(--color-dark);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.account-delete-btn {
+    margin-top: 3%;
+    width: 25%;
+    height: 7%;
+    border-radius: 25px;
+    background-color: var(--color-semidark);
+    color: var(--color-semilight);
+    font-size: 25px;
+    font-weight: bold;
+    border-color: var(--color-semidark);
+    cursor: pointer;
+}

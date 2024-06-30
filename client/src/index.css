@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --color-light: #DAD7CD;
+  --color-semilight: #A3B18A;
+  --color-normal: #588157;
+  --color-semidark: #3A5A40;
+  --color-dark: #344E41;
+  --color-light-rgb: 218, 215, 205;
+  --color-semilight-rgb: 163, 177, 138;
+  --color-normal-rgb: 88, 129, 87;
+  --color-semidark-rgb: 58, 90, 64;
+  --color-dark-rgb: 52, 78, 65;
+}
+
+.chat-icons {
+  cursor: pointer;
+  color: var(--color-semilight);
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  outline: none;
+  border-color: var(--color-normal);
+}

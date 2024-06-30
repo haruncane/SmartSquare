@@ -1,0 +1,98 @@
+.favoritesPage {
+    background: var(--color-semilight); 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorites-box {
+    margin-top: 5%;
+    height: 80%;
+    width: 55%;
+    border-radius: 25px 0px 0px 25px;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-normal) var(--color-light);
+    overflow-y: scroll;
+}
+
+.favorite-box-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.top-icon-left {
+    background-color: var(--color-normal);
+    padding: 2%;
+    border-radius: 20px 0px 20px 0px;
+    cursor: pointer;
+    color: var(--color-light);
+}
+
+.top-icon-right{
+    background-color: var(--color-normal);
+    padding: 2%;
+    border-radius: 0px 0px 0px 20px;
+    cursor: pointer;
+    color: var(--color-light);
+}
+
+.favorite-item {
+    margin-top: 2%;
+    width: 90%;
+    height: 12%;
+    min-height: 12%;
+    border-radius: 25px;
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite-title {
+    width: 85%;
+    height: max-content;
+    font-size: 20px;
+    color: var(--color-normal);
+    cursor: pointer;
+    padding: 5% 0%;
+}
+
+.favorite-icon {
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    color: var(--color-normal);
+}
+
+.chat-item {
+    width: 65%;
+    height: auto;
+    border-radius: 25px;
+    resize: none;
+    margin: 2% 2%;
+    padding: 2% 2%;
+    font-size: 15px;
+    color: var(--color-normal);
+    background-color: var(--color-light);
+    border: none;
+    outline: none;
+    white-space: pre-wrap;
+}
+
+.user-msg {
+    align-self: flex-end;
+}
+
+.model-msg {
+    align-self: flex-start;
+}

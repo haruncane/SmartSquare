@@ -1,0 +1,111 @@
+.mainPage {
+    background: var(--color-semilight); 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box {
+    margin-top: 5%;
+    height: 80%;
+    width: 55%;
+    border-radius: 25px;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.output-box {
+    margin-top: 2%;
+    height: 78%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-normal) var(--color-light);
+    overflow-y: scroll;
+}
+
+.output-text {
+    width: 65%;
+    height: auto;
+    border-radius: 25px;
+    resize: none;
+    margin: 2% 2%;
+    padding: 2% 2%;
+    font-size: 15px;
+    color: var(--color-normal);
+    background-color: var(--color-light);
+    border: none;
+    outline: none;
+    white-space: pre-wrap;
+}
+
+.input-box {
+    margin-top: 2%;
+    width: 90%;
+    height: 12%;
+    border-radius: 25px;
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box-left {
+    height: 100%;
+    width: 7%;
+    border-radius: 20px;
+    background-color: var(--color-semidark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box-right {
+    height: 100%;
+    width: 7%;
+    border-radius: 20px;
+    background-color: var(--color-semidark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box-mid {
+    width: 80%;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: var(--color-light);
+    font-size: 20px;
+    color: var(--color-normal);
+    padding: 10px;
+}
+
+.btn-line {
+    width: 95%;
+    color: var(--color-semilight);
+    border: 1px solid;
+}
+
+.spinner-loader {
+    padding-top: 3.5%;
+    cursor: default;
+}
+
+.user-msg {
+    align-self: flex-end;
+}
+
+.model-msg {
+    align-self: flex-start;
+}
