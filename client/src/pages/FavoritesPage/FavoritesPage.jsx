@@ -45,7 +45,10 @@ const FavoritesPage = () => {
 
   useEffect(() => {
     if (user) {
-      getChats(user._id, dispatch);
+      const getFavoritedChats = async () => {
+        await getChats(user._id, dispatch);
+      }
+      getFavoritedChats();
     }
     if (category === null || category === "null") {
       setFilteredFavorites(chats);
@@ -62,10 +65,12 @@ const FavoritesPage = () => {
           {
             selectedChat === null && <>
               {
-                category === null && <>
+                category === null && chats && <>
                   {chats?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((item, index) =>  (
                     <div key={index} className="favorite-item">
-                      <label onClick={() => handleSelection(item)} className='favorite-title'>{item.history[0].parts[0].text}</label>
+                      <label onClick={() => handleSelection(item)} className='favorite-title'>
+                        {item.history && item.history[0] && item.history[0].parts[0] ? item.history[0].parts[0].text : ' '}
+                      </label>
                       {item.isFavorite ? 
                         (<FavoriteIcon onClick={() => handleFavorite(item._id)} className='favorite-icon' />) :
                         (<FavoriteBorderIcon onClick={() => handleFavorite(item._id)} className='favorite-icon' />)
@@ -78,7 +83,9 @@ const FavoritesPage = () => {
                 category !== null && <>
                   {filteredFavorites?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((item, index) =>  (
                     <div key={index} className="favorite-item">
-                      <label onClick={() => handleSelection(item)} className='favorite-title'>{item.history[0].parts[0].text}</label>
+                      <label onClick={() => handleSelection(item)} className='favorite-title'>
+                      {item.history && item.history[0] && item.history[0].parts[0] ? item.history[0].parts[0].text : ' '}
+                      </label>
                       {item.isFavorite ? 
                         (<FavoriteIcon onClick={() => handleFavorite(item._id)} className='favorite-icon' />) :
                         (<FavoriteBorderIcon onClick={() => handleFavorite(item._id)} className='favorite-icon' />)

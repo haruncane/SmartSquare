@@ -18,10 +18,14 @@ const RegisterForm = () => {
     const email = user.email;
     const firstName = user.firstName;
     const lastName = user.lastName;
-    if (password === rePassword) {
-      register({ email, password, firstName, lastName }, dispatch);
+    if (email && firstName && lastName && rePassword && password) {
+      if (password === rePassword) {
+        register({ email, password, firstName, lastName }, dispatch);
+      } else {
+        alert("Passwords do not match!");
+      }
     } else {
-      alert("Passwords do not match!");
+      alert("Please fill all the fields!");
     }
   };
 

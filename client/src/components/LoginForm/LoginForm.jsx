@@ -12,11 +12,17 @@ const LoginForm = () => {
     setUser({ ...user, [e.target.name]: value });
   };
   
-  const handleLogin = () => {
+  const handleLogin = async () => {
     const email = user.email;
     const password = user.password;
     if (email && password) {
-      login({ email, password }, dispatch);
+      await login({ email, password }, dispatch);
+      setTimeout(() => {
+        const localUser = JSON.parse(localStorage.getItem("user"));
+        if (!localUser) {
+          alert("Credentials are wrong!");
+        }
+      }, 500);
     } else {
       alert("Please fill all the fields!");
     }

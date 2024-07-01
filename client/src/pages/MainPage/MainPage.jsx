@@ -12,6 +12,7 @@ import { AuthContext } from '../../context/authContext/AuthContext';
 import { PropagateLoader } from 'react-spinners';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useSpeechSynthesis } from 'react-speech-kit';
+import { getUser } from '../../context/authContext/apiCalls';
 
 const MainPage = () => {
   const { user } = useContext(AuthContext);
@@ -51,11 +52,11 @@ const MainPage = () => {
     if (user) {
       const userMessage = { role: "user", text: userInput };
       setCurrentChat([...currentChat, userMessage]);
-      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
       if (chat) {
         await updateChat(userInput, chat, dispatch);
       } else {
-        await createChat(user._id, userInput, category, dispatch);    
+        await createChat(user._id, userInput, category, dispatch);
+        await getUser(user._id, dispatch);
       }
     }
     setPrompt("");
@@ -77,22 +78,7 @@ const MainPage = () => {
     }
   };
 
-  useEffect(() => {/*
-    if (isChatCome) {
-      getLastCreatedChat(user._id, dispatch);
-      setIsChatCome(false);
-    }
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    if (chat) {
-      const lastResponse = chat.history[chat.history.length - 1];
-      if (lastResponse.role === "model") {
-        if (currentChat.text?.includes(lastResponse)) {
-          return
-        }
-        currentChat.push({ role: "model", text: lastResponse.parts[0].text });
-        setIsLoading(false);
-      }
-    }*/
+  useEffect(() => {
     if (isChatCome) {
       const fetchLatestChat = async () => {
         await getLastCreatedChat(user._id, dispatch);

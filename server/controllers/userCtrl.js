@@ -21,8 +21,12 @@ const login = async (req, res) => {
     const isUser = await User.findOne({ email: email });
     if (isUser) {
         try {
-            await isUser.checkPassword(password);
-            res.status(200).json(isUser);
+            const isMatch = await isUser.checkPassword(password);
+            if (isMatch) {
+                res.status(200).json(isUser);
+            } else {
+                res.status(400).json("Credentials are wrong!");
+            }
         } catch (err) {
             res.status(500).json(err);
         }

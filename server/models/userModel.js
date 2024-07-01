@@ -30,11 +30,11 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.pre("save", async function (next) {
-    this.password = bcrypt.hashSync(this.password, 10);
+    this.password = await bcrypt.hash(this.password, 10);
 });
 
 userSchema.methods.checkPassword = async function (enteredPw) {
-    return bcrypt.compareSync(enteredPw, this.password);
+    return await bcrypt.compare(enteredPw, this.password);
 };
 
 module.exports = mongoose.model("User", userSchema);
